@@ -71,5 +71,5 @@ function checkRightTriangle(x, y, z) {
 }
 
 function openLongread() {
-    window.open('http://etomeloch.tilda.ws/', '_blank', 'noopener,noreferrer');
+    window.open('task.html');
 }
