@@ -95,28 +95,28 @@
                 <label for="material">Автомобиль:</label>
                 <select id="mat" name="material">
                     <option value="none">-</option>
-                    <option value="gold">Entity XXR</option>
-                    <option value="silver">Taipan</option>
-                    <option value="whitegold">Tezeract</option>
-                    <option value="redgold">GP1</option>
-                    <option value="yellowgold">Visione</option>
-                    <option value="yellowgold">SC1</option>
+                    <option value="xxr">Entity XXR</option>
+                    <option value="taipan">Taipan</option>
+                    <option value="tezeract">Tezeract</option>
+                    <option value="gp1">GP1</option>
+                    <option value="visione">Visione</option>
+                    <option value="sc1">SC1</option>
                 </select><br><br>
 
                 <label for="jewel">Окрас:</label>
                 <select id="jewel" name="thing">
                     <option value="none">-</option>
-                    <option value="earrings">Красный</option>
-                    <option value="rings">Розовый</option>
-                    <option value="broshi">Желтый</option>
-                    <option value="chains">Оранжевый</option>
-                    <option value="podveska">Зеленый</option>
-                    <option value="brasleti">Синий</option>
-                    <option value="podveska">Черный</option>
-                    <option value="brasleti">Белый</option>
+                    <option value="red">Красный</option>
+                    <option value="pink">Розовый</option>
+                    <option value="yellow">Желтый</option>
+                    <option value="orange">Оранжевый</option>
+                    <option value="green">Зеленый</option>
+                    <option value="blue">Синий</option>
+                    <option value="black">Черный</option>
+                    <option value="white">Белый</option>
                 </select><br><br>
     
-                <label for="gem">Страховка Mors Mutual Insurance</label><br>
+                <label for="mmi">Страховка Mors Mutual Insurance</label><br>
                 <input type="radio" id="gem_yes" name="gem" value="yes">
                 <label for="gem_yes">Да</label><br>
                 <input type="radio" id="gem" name="gem" value="no">
@@ -148,23 +148,69 @@
             <br><br>
                 <label for="password">Пароль для редактирования:</label>
                 <input type="password" id="password" name="password">
-                
+            <br><br>
                 <input type="hidden" name="form_type" value="jewel_making">
                 <input type="submit" value="ОФОРМИТЬ">
-                
+            
             </form>
         </section>
     </main>
-    
-
-
-
     
     <footer>
         <p>©2025 Legendary Motorsport</p>
     </footer>
     
+    <script>
+        document.getElementById('Form').addEventListener('submit', function(event) {
+            const defaultValues = {
+                username: 'Гость',
+                number: '2',
+                material: 'Золото',
+                gem: 'no',
+                suggest_date: '2024-05-02',
+                password: 'default'
+            };
+    
+            const form = event.target;
+            for (const key in defaultValues) {
+                const input = form[key];
+                if (input && input.value === '') {
+                    input.value = defaultValues[key];
+                }
+            }
+    
+            if (!form.gem.value) {
+                form.gem.value = defaultValues.gem;
+            }
+        });
+    
+        document.getElementById('Form').addEventListener('submit', function(event) {
+            const defaultValues = {
+                name: 'Гость',
+                number: '2',
+                material: 'Золото',
+                mmi: 'yes',
+                suggest_date: '2024-05-02',
+                password: 'default'
+            };
+    
+            const form = event.target;
+            for (const key in defaultValues) {
+                const input = form[key];
+                if (input && input.value === '') {
+                    input.value = defaultValues[key];
+                }
+            }
+    
+            if (!form.gem.value) {
+                form.gem.value = defaultValues.gem;
+            }
+        });
+    </script>
 
-</body></html>
+    
+</body>
+</html>
+
 
 
